@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/famous/.config/.git'
 let g:netrw_dirhist_3='/home/famous/.config/neomutt'
 let g:netrw_dirhist_2='/etc/NetworkManager/system-connections'
 let g:netrw_dirhist_1='/home/famous/work/meshle-pro/__tests__'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_8='/home/famous/.config'
 let g:netrw_dirhist_7='/home/famous'
 let g:netrw_dirhist_6='/home/famous/.yarn'
 let g:netrw_dirhist_5='/home/famous'
-let g:netrw_dirhist_4='/home/famous/.config/awesome/themes'
