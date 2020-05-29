@@ -676,6 +676,14 @@ awful.rules.rules = {
     { rule = { class = "Reactotron" },
       properties = { screen = 1, tag = awful.util.tagnames[1] } },
       
+    -- Set telegram desktop to always map on the fifth tag on screen 1.
+    { rule = { class = "TelegramDesktop" },
+      properties = { screen = 1, tag = awful.util.tagnames[5] } },
+      
+    -- Set spotify to always map on the sixth tag on screen 1.
+    { rule = { class = "Spotify" },
+      properties = { screen = 1, tag = awful.util.tagnames[6] } },
+
     { rule = { class = "Gimp", role = "gimp-image-window" },
           properties = { maximized = true } },
 }
