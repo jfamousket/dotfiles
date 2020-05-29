@@ -1,0 +1,101 @@
+IMAPAccount gmail
+# Address to connect to
+Host imap.gmail.com
+User jfamousket@gmail.com
+PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.config/neomutt/passwords/account.gpg"
+# To store the password in an encrypted file use PassCmd instead of Pass
+# PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.mailpass.gpg"
+#
+# Use SSL
+SSLType IMAPS
+Timeout 0
+# The following line should gmail. If get certificate errors, uncomment the two following lines and read the "Troubleshooting" section.
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+#CertificateFile ~/.cert/imap.gmail.com.pem
+#CertificateFile ~/.cert/Equifax_Secure_CA.pem
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+# The trailing "/" is important
+Path ~/Mail/gmail/
+Inbox ~/Mail/gmail/INBOX
+
+Channel gmail-default
+Master :gmail-remote:
+Slave :gmail-local:
+Patterns INBOX
+
+Channel gmail-sent
+Master :gmail-remote:"[Gmail]/Sent Mail"
+Slave :gmail-local:sent
+
+Channel gmail-trash
+Master :gmail-remote:"[Gmail]/Trash"
+Slave :gmail-local:trash
+
+Channel gmail-drafts
+Master :gmail-remote:"[Gmail]/Drafts"
+Slave :gmail-local:drafts
+
+# Automatically create missing mailboxes, both locally and on the server
+Create Slave
+# Save the synchronization state files in the relevant directory
+SyncState *
+
+# Get all the channels together into a group.
+Group gmail
+Channel gmail-default
+Channel gmail-sent
+Channel gmail-trash
+Channel gmail-drafts
+
+
+IMAPAccount meshle
+Host mail.meshle.com 
+User famous.jingo@meshle.com
+PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.config/neomutt/passwords/meshle-pass.gpg"
+SSLType IMAPS
+
+IMAPStore meshle-remote
+Account meshle
+
+MaildirStore meshle-local
+Subfolders Verbatim
+# The trailing "/" is important
+Path ~/Mail/meshle/
+Inbox ~/Mail/meshle/INBOX
+
+Channel meshle-inbox
+Master :meshle-remote:"INBOX"
+Slave :meshle-local:INBOX
+Create Both
+Expunge Both
+
+Group meshle
+Channel meshle-inbox
+
+IMAPAccount hsrw
+Host mail-kam.hsrw.org 
+User 25873
+PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.config/neomutt/passwords/hsrw-pass.gpg"
+SSLType IMAPS
+
+IMAPStore hsrw-remote
+Account hsrw
+
+MaildirStore hsrw-local
+Subfolders Verbatim
+# The trailing "/" is important
+Path ~/Mail/hsrw/
+Inbox ~/Mail/hsrw/INBOX
+
+Channel hsrw-inbox
+Master :hsrw-remote:"INBOX"
+Slave :hsrw-local:INBOX
+Create Both
+Expunge Both
+
+Group hsrw
+Channel hsrw-inbox

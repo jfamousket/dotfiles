@@ -84,8 +84,14 @@ ignore *
 unignore from: to: cc: bcc: date: subject:
 unhdr_order *
 hdr_order from: to: cc: bcc: date: subject:
+
+# prefer plain text
 alternative_order text/plain text/enriched text/html
+# auto convert text/html MIME type to text/plain
 auto_view text/html
+
+# mailcap file to use (optional)
+set mailcap_path="~/.config/neomutt/mailcap"
 
 # sidebar patch config
 set sidebar_visible
@@ -95,7 +101,6 @@ set sidebar_width = 25
 set sidebar_divider_char = ' | '
 set sidebar_indent_string = '  ''
 set sidebar_format = "%B %* [%?N?%N / ?%S]"
-# set new_mail_command="notify-text.sh -t 0 'New Email' '%n new messages, %u unread.' &"
 
 # Mailboxes to show in the sidebar.
 mailboxes =gmail/INBOX =meshle/INBOX =hsrw/INBOX
