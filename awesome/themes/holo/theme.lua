@@ -305,10 +305,11 @@ function ()
 end)))
 
 -- Battery
-local bat = lain.widget.bat({
+local bat0 = lain.widget.bat({
+    battery  = "BAT0",
     settings = function()
-       bat_header = " Bat "
-       bat_p      = bat_now.perc .. " "
+       bat_header = " Bat0 "
+       bat_p = bat_now.perc .. " "
        if bat_now.ac_status == 1 then
             bat_p = bat_p .. "Plugged "
        end
@@ -316,6 +317,18 @@ local bat = lain.widget.bat({
     end
 })
 
+-- Battery
+local bat1 = lain.widget.bat({
+    battery  = "BAT1",
+    settings = function()
+       bat_header = " Bat1 "
+       bat_p = bat_now.perc .. " "
+       if bat_now.ac_status == 1 then
+            bat_p = bat_p .. "Plugged "
+       end
+       widget:set_markup(markup.font(theme.font, markup(blue, bat_header) .. bat_p))
+    end
+})
 -- / fs
 --[[ commented because it needs Gio/Glib >= 2.54
 theme.fs = lain.widget.fs({
@@ -455,7 +468,8 @@ function theme.at_screen_connect(s)
 	    theme.hsrw.widget,
 	    kbdcfg.widget,
 	    mem,
-            bat.widget,
+	    bat0.widget,
+	    bat1.widget,
             spr_right,
             musicwidget,
 	    temp,

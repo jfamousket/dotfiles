@@ -1,2 +1,2 @@
 #!/usr/bin/bash
-env LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify
+env LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify --force-device-scale-factor=1.5

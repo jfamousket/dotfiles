@@ -1,21 +1,6 @@
 let g:netrw_dirhistmax  =10
-<<<<<<< HEAD
-let g:netrw_dirhistcnt =2
-=======
 let g:netrw_dirhistcnt =4
-let g:netrw_dirhist_4='/home/famous/.config/.git'
-let g:netrw_dirhist_3='/home/famous/.config/neomutt'
->>>>>>> eadb0ff... clear history
-let g:netrw_dirhist_2='/etc/NetworkManager/system-connections'
-let g:netrw_dirhist_1='/home/famous/work/meshle-pro/__tests__'
-let g:netrw_dirhist_0='/run/wpa_supplicant'
-let g:netrw_dirhist_9='/home/famous/.config/ranger'
-let g:netrw_dirhist_8='/home/famous/.config'
-let g:netrw_dirhist_7='/home/famous'
-let g:netrw_dirhist_6='/home/famous/.yarn'
-let g:netrw_dirhist_5='/home/famous'
-<<<<<<< HEAD
-let g:netrw_dirhist_4='/home/famous/.config/awesome/themes'
-let g:netrw_dirhist_3='/etc/openvpn/client'
-=======
->>>>>>> eadb0ff... clear history
+let g:netrw_dirhist_4='/home/famous/.config/nvim/init.vim'
+let g:netrw_dirhist_3='/home/famous/.config/nvim/init.vim/autoload'
+let g:netrw_dirhist_2='/home/famous/.config/nvim/init.vim'
+let g:netrw_dirhist_1='/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/device:19/PNP0C09:00/PNP0C0A:00/power_supply/BAT0'
