@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@feathersjs/cli": "^4.4.0",
+    "meshle-cli": "https://jfamousket@bitbucket.org/meshle/meshle-cli.git",
+    "neovim": "^4.9.0",
+    "typescript": "^3.9.5"
+  }
+}

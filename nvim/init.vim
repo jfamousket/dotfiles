@@ -6,16 +6,23 @@ call plug#begin('~/.vim/plugged')
 " https://github.com/neoclide/coc.nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" https://github.com/kevinoid/vim-jsonc
+Plug 'kevinoid/vim-jsonc'
+
 " https://github.com/HerringtonDarkholme/yats.vim
 Plug 'HerringtonDarkholme/yats.vim'
 
-" https://github.com/scrooloose/nerdtree
-Plug 'scrooloose/nerdtree'
+" https://github.com/vifm/vifm.vim
+Plug 'vifm/vifm.vim'
 
-" Nerd Tree icons and git highlight
-"Plug 'tsony-tsonev/nerdtree-git-plugin'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"https://github.com/ctrlpvim/ctrlp.vim
+Plug 'ctrlpvim/ctrlp.vim'
+
+"https://github.com/prettier/vim-prettier
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
 Plug 'ryanoasis/vim-devicons'
 
 "https://github.com/tomasiser/vim-code-dark
@@ -30,53 +37,49 @@ Plug 'airblade/vim-gitgutter'
 "https://github.com/liuchengxu/vim-which-key
 Plug 'liuchengxu/vim-which-key'
 
+"https://github.com/vim-airline/vim-airline
+Plug 'vim-airline/vim-airline'
+
+"https://github.com/preservim/tagbar
+Plug 'majutsushi/tagbar'
+
+"https://github.com/tpope/vim-fugitive
+Plug 'tpope/vim-fugitive'
+
+" https://github.com/junegunn/fzf.vim
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 " Make sure you use single quotes
 " Initialize plugin system
 call plug#end()
 
+"devicons
+set encoding=UTF-8
+
 " vim-prettier
-"let g:prettier#quickfix_enabled = 0
-"let g:prettier#quickfix_auto_focus = 0
+let g:prettier#quickfix_enabled = 1 
+let g:prettier#quickfix_auto_focus = 1 
 " prettier command for coc
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-" run prettier on save
-"let g:prettier#autoformat = 0
-"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+"run prettier on save
+let g:prettier#autoformat = 1 
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
-" Open nerd tree 
-nnoremap <silent> <C-B> :NERDTreeToggle<CR>
-augroup nerdtree_open
-    autocmd!
-    autocmd VimEnter * NERDTree | wincmd p
-augroup END
-
-let g:NERDTreeGitStatusWithFlags = 1
-"let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-"let g:NERDTreeGitStatusNodeColorization = 1
-"let g:NERDTreeColorMapCustom = {
-    "\ "Staged"    : "#0ee375",  
-    "\ "Modified"  : "#d9bf91",  
-    "\ "Renamed"   : "#51C9FC",  
-    "\ "Untracked" : "#FCE77C",  
-    "\ "Unmerged"  : "#FC51E6",  
-    "\ "Dirty"     : "#FFBD61",  
-    "\ "Clean"     : "#87939A",   
-    "\ "Ignored"   : "#808080"   
-    "\ }    
-
-" Nerd tree ignore node_modules
-let g:NERDTreeIgnore = ['^node_modules$']
-
-" j/k will move virtual lines (lines that wrap)
-noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
-noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+" coc config
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint', 
+  \ 'coc-prettier', 
+  \ 'coc-json', 
+  \ ]
 
 set number
 
-set smarttab
-set cindent
-set tabstop=2
-set shiftwidth=2
+" FZF config
+let g:fzf_preview_window = 'left:50%'
 
 " always uses spaces instead of tab characters
 set expandtab
@@ -84,28 +87,13 @@ set expandtab
 " ctrlp ignore git files
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
-" sync open file with NERDTree
-" " Check if NERDTree is open or active
-function! IsNERDTreeOpen()        
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
-
-" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
-" file, and we're not in vimdiff
-function! SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
-
-" Highlight currently open buffer in NERDTree
-autocmd BufEnter * call SyncTree()
-
 set t_Co=256
 set t_ut=
 colorscheme codedark
 
+"""""""""""""""""""""""""""""""""""""""""
+" From Coc Readme
+"""""""""""""""""""""""""""""""""""""""""
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -259,8 +247,11 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+"""""""""""""""""""""""""""""""""""""""""
+" End from Coc Readme
+"""""""""""""""""""""""""""""""""""""""""
+
 " ctrlp
-set runtimepath^=~/.config/nvim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
@@ -269,3 +260,17 @@ filetype plugin on
 vmap <silent> <C-_> <plug>NERDCommenterToggle
 nmap <silent> <C-_> <plug>NERDCommenterToggle
 
+"vim-airline configs
+" smart tab line
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+" vim tagbar config
+nmap <F8> :TagbarToggle<CR>
+
+" source coc config
+source $HOME/.config/nvim/plug-config/coc.vim
+
+" source global configs
+source $HOME/.config/nvim/global.init.vim

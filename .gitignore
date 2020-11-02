@@ -115,3 +115,27 @@ dist
 .yarn/build-state.yml
 .pnp.*
 neomutt/passwords/*.gpg
+
+awesome-old/*
+Code\ -\ Insiders/*
+chromium/*
+Google/*
+Android\ Open\ Source\ Project/*
+Postman/*
+Reactotron/*
+MongoDB\ Compass/*
+libreoffice/*
+autorandr/*
+nodemon.json
+menus/*
+zoomus.conf
+coc/*
+spotify/*
+pulse/*
+mps-youtube/*
+dconf/*
+neofetch/*
+LanguageTool/*
+configstore/*
+QtProject.conf
+d-feet/*

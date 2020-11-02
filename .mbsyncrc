@@ -2,7 +2,7 @@ IMAPAccount gmail
 # Address to connect to
 Host imap.gmail.com
 User jfamousket@gmail.com
-PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.config/neomutt/passwords/account.gpg"
+PassCmd "pass neomutt/jfamousket"
 # To store the password in an encrypted file use PassCmd instead of Pass
 # PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.mailpass.gpg"
 #
@@ -55,7 +55,7 @@ Channel gmail-drafts
 IMAPAccount meshle
 Host mail.meshle.com 
 User famous.jingo@meshle.com
-PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.config/neomutt/passwords/meshle-pass.gpg"
+PassCmd "pass neomutt/meshle"
 SSLType IMAPS
 
 IMAPStore meshle-remote
@@ -79,7 +79,7 @@ Channel meshle-inbox
 IMAPAccount hsrw
 Host mail-kam.hsrw.org 
 User 25873
-PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.config/neomutt/passwords/hsrw-pass.gpg"
+PassCmd "pass neomutt/hsrw"
 SSLType IMAPS
 
 IMAPStore hsrw-remote
