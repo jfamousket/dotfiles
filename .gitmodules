@@ -6,10 +6,11 @@
 	url = https://github.com/ctrlpvim/ctrlp.vim
 [submodule "Xresources-themes"]
 	path = Xresources-themes
-	url = git@personal.git:logico-dev/Xresources-themes.git
+	url = https://github.com/logico-dev/Xresources-themes.git
 [submodule "vifm/vifmimg"]
 	path = vifm/vifmimg
 	url = https://github.com/cirala/vifmimg.git
 [submodule "awesome-dotfiles"]
 	path = awesome-dotfiles
-	url = git@personal.git:jfamousket/awesome-dotfiles.git
+	url = https://github.com/jfamousket/awesome-dotfiles.git
+	branch = my-config
