@@ -7,10 +7,6 @@
 [submodule "vifm/vifmimg"]
 	path = vifm/vifmimg
 	url = https://github.com/cirala/vifmimg.git
-[submodule "awesome-dotfiles"]
-	path = awesome-dotfiles
-	url = https://github.com/jfamousket/awesome-dotfiles.git
-	branch = my-config
 [submodule "nord-xresources"]
 	path = nord-xresources
 	url = https://github.com/arcticicestudio/nord-xresources.git
