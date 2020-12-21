@@ -133,6 +133,7 @@ coc/*
 spotify/*
 pulse/*
 mps-youtube/*
+Thunar/*
 dconf/*
 neofetch/*
 LanguageTool/*
@@ -140,3 +141,6 @@ configstore/*
 QtProject.conf
 d-feet/*
 .mbsync
+BraveSoftware/*
+octave/*
+yarn/link/*
