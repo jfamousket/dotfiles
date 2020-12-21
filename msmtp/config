@@ -1,0 +1,43 @@
+defaults
+auth	on
+tls	on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile /home/famous/.config/msmtp/msmtp.log
+
+account ketomaads@gmail.com
+host smtp.gmail.com
+port 587
+from ketomaads@gmail.com
+user ketomaads@gmail.com
+passwordeval "pass mw-ketomaads@gmail.com"
+
+
+account jfamousket@gmail.com
+host smtp.gmail.com
+port 587
+from jfamousket@gmail.com
+user jfamousket@gmail.com
+passwordeval "pass mw-jfamousket@gmail.com"
+
+
+
+
+
+
+account 25873@students.hsrw
+host mail-kam.hsrw.org
+port 587
+from 25873@students.hsrw
+user 25873@students.hsrw
+passwordeval "pass mw-25873@students.hsrw"
+
+
+
+account famous.jingo@meshle.com
+host mail.meshle.com
+port 587
+from famous.jingo@meshle.com
+user famous.jingo@meshle.com
+passwordeval "pass mw-famous.jingo@meshle.com"
+
+

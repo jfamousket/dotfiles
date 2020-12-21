@@ -17,3 +17,4 @@ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 " source keybindings
 source $HOME/.config/nvim/keybindings.vim
 
+

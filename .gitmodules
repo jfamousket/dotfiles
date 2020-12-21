@@ -14,3 +14,9 @@
 	path = awesome-dotfiles
 	url = https://github.com/jfamousket/awesome-dotfiles.git
 	branch = my-config
+[submodule "nord-xresources"]
+	path = nord-xresources
+	url = https://github.com/arcticicestudio/nord-xresources.git
+[submodule "dotfiles"]
+	path = dotfiles
+	url = https://github.com/JavaCafe01/dotfiles.git

@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/etc/urlview'
+let g:netrw_dirhist_9='/home/famous'
+let g:netrw_dirhist_8='/home/famous/.config'
+let g:netrw_dirhist_7='/home/famous/.config/mutt'
+let g:netrw_dirhist_6='/home/famous/Remote/Mega/school/EmbSyst/lec7asm'
+let g:netrw_dirhist_5='/var/lib/mongodb'
+let g:netrw_dirhist_4='/var/log/mongodb'
+let g:netrw_dirhist_3='/var/lib/mongodb'
+let g:netrw_dirhist_2='/home/famous/.config/dotfiles/.bin'
+let g:netrw_dirhist_1='/home/famous/.config/dotfiles'
