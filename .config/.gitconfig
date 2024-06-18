@@ -1,0 +1,41 @@
+[user]
+  email = jfamousket@gmail.com
+  name = Famous Ketoma Jingo
+
+[init]
+  defaultBranch = master
+
+[alias]
+  mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
+
+[cola]
+  icontheme = dark
+  theme = default
+
+[core]
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  light = false
+  side-by-side = false
+  line-numbers = true
+  syntax-theme = tokyonight_night
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
+
+[color]
+  ui = true
+
+[pull]
+  rebase = true
+
+[push]
+  default = upstream
