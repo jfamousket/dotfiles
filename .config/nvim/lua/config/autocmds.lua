@@ -12,3 +12,10 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt.conceallevel = 0
 	end,
 })
+
+vim.filetype.add({
+	extension = {
+		overlay = "dts",
+		keymap = "dts",
+	},
+})

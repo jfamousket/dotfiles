@@ -1,14 +1,15 @@
 return {
 	{
-		enabled = false,
+    enabled = false,
 		"folke/flash.nvim",
 		---@type Flash.Config
 		opts = {
-			search = {
-				forward = true,
-				multi_window = false,
-				wrap = false,
-				incremental = true,
+			modes = {
+				treesitter_search = {
+					label = {
+						rainbow = { enabled = true },
+					},
+				},
 			},
 		},
 	},
@@ -64,15 +65,6 @@ return {
 					require("telescope.builtin").find_files({})
 				end,
 				desc = "Find files",
-			},
-			{
-				"<leader>fP",
-				function()
-					require("telescope.builtin").find_files({
-						cwd = require("lazy.core.config").options.root,
-					})
-				end,
-				desc = "Find Plugin File",
 			},
 			{
 				";f",

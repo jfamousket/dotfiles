@@ -1,5 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
 		"clone",
@@ -29,6 +29,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.editor.harpoon2" },
 		{ import = "lazyvim.plugins.extras.linting.eslint" },
 		{ import = "lazyvim.plugins.extras.formatting.prettier" },
+		{ import = "lazyvim.plugins.extras.coding.copilot-chat" },
 		{ import = "lazyvim.plugins.extras.lang.typescript" },
 		{ import = "lazyvim.plugins.extras.lang.json" },
 		{ import = "lazyvim.plugins.extras.lang.markdown" },
@@ -36,14 +37,26 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.tailwind" },
 		{ import = "lazyvim.plugins.extras.coding.copilot" },
 		{ import = "lazyvim.plugins.extras.dap.core" },
-		-- { import = "lazyvim.plugins.extras.vscode" },
 		{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
 		{ import = "lazyvim.plugins.extras.lang.go" },
-		-- { import = "lazyvim.plugins.extras.test.core" },
-		-- { import = "lazyvim.plugins.extras.coding.yanky" },
-		-- { import = "lazyvim.plugins.extras.editor.mini-files" },
-		-- { import = "lazyvim.plugins.extras.util.project" },
 		{ import = "plugins" },
+	},
+	local_spec = true, -- load project specific .lazy.lua spec files. They will be added at the end of the spec.
+	lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json", -- lockfile generated after running update.
+	pkg = {
+		enabled = true,
+		cache = vim.fn.stdpath("state") .. "/lazy/pkg-cache.lua",
+		versions = true, -- Honor versions in pkg sources
+		-- the first package source that is found for a plugin will be used.
+		sources = {
+			"lazy",
+			"rockspec",
+			"packspec",
+		},
+	},
+	rocks = {
+		root = vim.fn.stdpath("data") .. "/lazy-rocks",
+		server = "https://nvim-neorocks.github.io/rocks-binaries/",
 	},
 	defaults = {
 		-- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -57,7 +70,11 @@ require("lazy").setup({
 	dev = {
 		path = "~/.ghq/github.com",
 	},
-	checker = { enabled = true }, -- automatically check for plugin updates
+	checker = { enabled = false }, -- automatically check for plugin updates
+	install = { colorscheme = { "tokyonight", "habamax" } },
+	diff = {
+		cmd = "terminal_git",
+	},
 	performance = {
 		cache = {
 			enabled = true,

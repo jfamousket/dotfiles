@@ -1,4 +1,13 @@
 return {
+	-- enhance Neovim's native comments:
+	{
+		"folke/ts-comments.nvim",
+		opts = {
+			langs = {
+				dts = "// %s",
+			},
+		},
+	},
 	-- Create annotations with one keybind, and jump your cursor in the inserted annotation
 	{
 		"danymat/neogen",
@@ -30,6 +39,7 @@ return {
 				function()
 					require("refactoring").select_refactor()
 				end,
+				desc = "Refactor",
 				mode = "v",
 				noremap = true,
 				silent = true,
