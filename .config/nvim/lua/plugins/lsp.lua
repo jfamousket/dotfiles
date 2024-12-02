@@ -79,6 +79,16 @@ return {
 						},
 					},
 				},
+				gopls = {
+					settings = {
+						gopls = {
+              gofumpt = false,
+							analyses = {
+								fieldalignment = false,
+							},
+						},
+					},
+				},
 				lua_ls = {
 					-- enabled = false,
 					single_file_support = true,

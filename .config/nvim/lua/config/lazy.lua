@@ -29,16 +29,26 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.editor.harpoon2" },
 		{ import = "lazyvim.plugins.extras.linting.eslint" },
 		{ import = "lazyvim.plugins.extras.formatting.prettier" },
-		{ import = "lazyvim.plugins.extras.coding.copilot-chat" },
+		-- coding
+		{ import = "lazyvim.plugins.extras.ai.copilot-chat" },
+		{ import = "lazyvim.plugins.extras.ai.copilot" },
+		-- languages
 		{ import = "lazyvim.plugins.extras.lang.typescript" },
 		{ import = "lazyvim.plugins.extras.lang.json" },
+		{ import = "lazyvim.plugins.extras.lang.yaml" },
 		{ import = "lazyvim.plugins.extras.lang.markdown" },
 		{ import = "lazyvim.plugins.extras.lang.rust" },
 		{ import = "lazyvim.plugins.extras.lang.tailwind" },
-		{ import = "lazyvim.plugins.extras.coding.copilot" },
-		{ import = "lazyvim.plugins.extras.dap.core" },
-		{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
 		{ import = "lazyvim.plugins.extras.lang.go" },
+		{ import = "lazyvim.plugins.extras.lang.git" },
+		{ import = "lazyvim.plugins.extras.lang.vue" },
+
+		{ import = "lazyvim.plugins.extras.dap.core" },
+		{ import = "lazyvim.plugins.extras.test.core" },
+		{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
+
+		-- ui
+		{ import = "lazyvim.plugins.extras.ui.treesitter-context" },
 		{ import = "plugins" },
 	},
 	local_spec = true, -- load project specific .lazy.lua spec files. They will be added at the end of the spec.
