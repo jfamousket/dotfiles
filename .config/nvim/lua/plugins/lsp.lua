@@ -41,6 +41,16 @@ return {
 						return require("lspconfig.util").root_pattern(".git")(...)
 					end,
 				},
+				pyright = {
+					root_dir = function(...)
+						return require("lspconfig.util").root_pattern(".git")(...)
+					end,
+				},
+				ruff = {
+					root_dir = function(...)
+						return require("lspconfig.util").root_pattern(".git")(...)
+					end,
+				},
 				tsserver = {
 					root_dir = function(...)
 						return require("lspconfig.util").root_pattern(".git")(...)
@@ -82,7 +92,7 @@ return {
 				gopls = {
 					settings = {
 						gopls = {
-              gofumpt = false,
+							gofumpt = false,
 							analyses = {
 								fieldalignment = false,
 							},

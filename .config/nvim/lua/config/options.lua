@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
+vim.g.lazyvim_picker = "snacks"
 
 vim.opt.number = true
 vim.g.autoformat = false
