@@ -1,0 +1,56 @@
+[user]
+  email = jfamousket@gmail.com
+  name = Famous Ketoma Jingo
+
+[init]
+  defaultBranch = master
+
+[alias]
+  mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
+
+[cola]
+  icontheme = dark
+  theme = default
+
+[core]
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  dark = true
+  side-by-side = true
+  line-numbers = true
+  minus-style                   = syntax "#3a273a"
+  minus-non-emph-style          = syntax "#3a273a"
+  minus-emph-style              = syntax "#6b2e43"
+  minus-empty-line-marker-style = syntax "#3a273a"
+  line-numbers-minus-style      = "#e26a75"
+  plus-style                    = syntax "#273849"
+  plus-non-emph-style           = syntax "#273849"
+  plus-emph-style               = syntax "#305f6f"
+  plus-empty-line-marker-style  = syntax "#273849"
+  line-numbers-plus-style       = "#b8db87"
+  line-numbers-zero-style       = "#3b4261"
+
+[merge]
+  conflictstyle = zdiff3
+	tool = vscode
+
+[diff]
+  colorMoved = default
+
+[color]
+  ui = true
+
+[pull]
+  rebase = true
+
+[push]
+  default = upstream
+[credential]
+	helper = store
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
