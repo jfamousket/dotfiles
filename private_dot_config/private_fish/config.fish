@@ -11,6 +11,7 @@ fish_add_path /usr/local/bin
 fish_add_path /opt/homebrew/opt/postgresql@13/bin
 fish_add_path /opt/homebrew/opt/libpq/bin
 fish_add_path ~/bin
+fish_add_path /Applications/LibreOffice.app/Contents/MacOS
 
 set -Ux LDFLAGS -L/opt/homebrew/lib
 set -Ux CPPFLAGS -I/opt/homebrew/include
@@ -43,6 +44,7 @@ set -x XDG_CONFIG_HOME "$HOME/.config"
 abbr tc 'tmux attach'
 abbr ta 'tmux attach -t'
 abbr tad 'tmux attach -d -t'
+abbr td 'tmux detach'
 abbr ts 'tmux new -s'
 abbr tl 'tmux ls'
 abbr tk 'tmux kill-session -t'
@@ -100,5 +102,4 @@ set PATH $PATH /Users/jif1lb/.local/bin
 # The original version is saved in /Users/jif1lb/.config/fish/config.fish.pysave
 set -x PATH "/Library/Frameworks/Python.framework/Versions/3.10/bin" "$PATH"
 
-test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
-
+test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish
