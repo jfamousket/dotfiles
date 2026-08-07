@@ -39,6 +39,11 @@ return {
 				-- 		return require("lspconfig.util").root_pattern(".git")(...)
 				-- 	end,
 				-- },
+				codebook = {
+					root_dir = function(...)
+						return require("lspconfig.util").root_pattern(".codebook.toml", "codebook.toml")(...)
+					end,
+				},
 				tsserver = {
 					root_dir = function(...)
 						return require("lspconfig.util").root_pattern(".git")(...)

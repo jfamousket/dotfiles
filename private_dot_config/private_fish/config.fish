@@ -56,7 +56,6 @@ abbr mkdir "mkdir -vp"
 alias ls "eza --color=always --icons --group-directories-first"
 alias la 'eza --color=always --icons --group-directories-first --all'
 alias ll 'eza --color=always --icons --group-directories-first --all --long'
-alias ld lazydocker
 abbr l ll
 
 # Editor
@@ -70,6 +69,8 @@ abbr lv lazyvim
 # Dev
 alias lazygit "TERM=xterm-256color command lazygit"
 alias lg lazygit
+alias lc lazycurl
+alias ld lazydocker
 
 # Other
 abbr df "grc /bin/df -h"
