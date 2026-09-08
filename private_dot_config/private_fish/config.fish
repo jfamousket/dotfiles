@@ -1,3 +1,8 @@
+# The following lines were added by Docker Desktop to add commands to your PATH.
+export PATH="$PATH:/Users/jif1lb/.docker/bin"
+
+# End of Docker Desktop section.
+
 # Cursor styles
 set -gx fish_vi_force_cursor 1
 set -gx fish_cursor_default block

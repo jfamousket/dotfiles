@@ -23,9 +23,9 @@ gui:
   commandLogSize: 8
   splitDiff: auto
 git:
-  pagers:
+  diffRenderers:
     - colorArg: always
-      pager: ""
+      type: rawGit
   commit:
     signOff: false
   merging:

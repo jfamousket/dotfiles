@@ -10,3 +10,5 @@ Host lifeline
   Port 2558
   User root
   HostName 57.129.106.133
+Host ssh.dev.azure.com
+  WarnWeakCrypto no-pq-kex

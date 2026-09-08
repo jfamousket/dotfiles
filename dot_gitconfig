@@ -3,7 +3,7 @@
   name = Famous Ketoma Jingo
 
 [init]
-  defaultBranch = master
+  defaultBranch = main
 
 [alias]
   mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
@@ -56,7 +56,7 @@
 [push]
   default = upstream
 [credential]
-	helper = store
+	helper = osxkeychain
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
 [filter "lfs"]
@@ -64,3 +64,9 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
